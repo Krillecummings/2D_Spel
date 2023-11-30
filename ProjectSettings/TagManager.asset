@@ -8,6 +8,7 @@ TagManager:
   - Spikes
   - SpikeMan
   - Bottom
+  - Enemy
   layers:
   - Default
   - TransparentFX
