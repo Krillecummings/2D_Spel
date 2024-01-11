@@ -10,6 +10,7 @@ public class Death : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private float healthAmount = 100;
     // Start is called before the first frame update
 
     [SerializeField] private AudioSource deathSoundEffect;
@@ -33,9 +34,13 @@ public class Death : MonoBehaviour
     }
     private void Die()
     {
-        deathSoundEffect.Play();
-        anim.SetTrigger("death");
-        rb.bodyType = RigidbodyType2D.Static;
+        if (healthAmount<0)
+        {
+            deathSoundEffect.Play();
+            anim.SetTrigger("death");
+            rb.bodyType = RigidbodyType2D.Static;
+        }
+        
         
     }
 

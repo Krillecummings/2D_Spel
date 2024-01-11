@@ -8,6 +8,7 @@ public class Finishedlevel : MonoBehaviour
 {
     public Animator anim;
     private AudioSource finishSound;
+    private int enemycount = 5;
     private bool levelCompleted;
     
     void Start()
@@ -16,9 +17,9 @@ public class Finishedlevel : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*void Update()
     {
-        if(collision.gameObject.name == "Player" && levelCompleted != true)
+        if(  && levelCompleted != true)
         {
             anim.SetTrigger("finished");
             finishSound.Play();
@@ -26,7 +27,7 @@ public class Finishedlevel : MonoBehaviour
             Invoke("CompleteLevel", 6f);
             
         }
-    }
+    }*/
     void CompleteLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

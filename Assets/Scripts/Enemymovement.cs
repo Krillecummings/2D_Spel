@@ -13,6 +13,8 @@ public class Enemymovement : MonoBehaviour
     [SerializeField] private GameObject[] waypoints;
     private Transform waypointTransform;
     private int currentWaypointIndex = 0;
+    private int HP = 10;
+    private int damage = 10;
 
 
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class Enemymovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        sprite.flipX = true;
 
     }
 
@@ -41,7 +44,11 @@ public class Enemymovement : MonoBehaviour
 
             }
         }
+        if (HP<0)
+        {
+            sprite.flipX=true;
+        }
 
-       
+
     }
 }
