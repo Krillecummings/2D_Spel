@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
@@ -14,7 +15,11 @@ public class Enemymovement : MonoBehaviour
     private Transform waypointTransform;
     private int currentWaypointIndex = 0;
     private int HP = 10;
-    private int damage = 10;
+    private int Edamage = 10;
+    private int enemycount = 5;
+    private int points = 0;
+    [SerializeField] private TextMeshProUGUI Enemycount;
+
 
 
     // Start is called before the first frame update
@@ -46,7 +51,12 @@ public class Enemymovement : MonoBehaviour
         }
         if (HP<0)
         {
-            sprite.flipX=true;
+            Destroy(sprite.gameObject);
+            points += 1;
+
+            Enemycount.text = "Enemies Remaining: " + points;
+
+            enemycount++;
         }
 
 

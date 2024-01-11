@@ -17,17 +17,19 @@ public class Finishedlevel : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    /*void Update()
+
+
+    void Update()
     {
-        if(  && levelCompleted != true)
+        if (enemycount > 5 && levelCompleted != true)
         {
             anim.SetTrigger("finished");
             finishSound.Play();
             levelCompleted = true;
             Invoke("CompleteLevel", 6f);
-            
+
         }
-    }*/
+    }
     void CompleteLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
