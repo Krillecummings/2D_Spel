@@ -14,6 +14,7 @@ public class Enemymovement : MonoBehaviour
     [SerializeField] private GameObject[] waypoints;
     private Transform waypointTransform;
     private int currentWaypointIndex = 0;
+    private int MaxHP = 10;
     private int HP = 10;
     private int Edamage = 10;
     private int enemycount = 5;
@@ -28,6 +29,7 @@ public class Enemymovement : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         sprite.flipX = true;
+        MaxHP = HP;
 
     }
 
