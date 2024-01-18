@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         healthSlider.value = healthAmount;
+        UpdateHealthBar();
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void takeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         Debug.Log("tar skada :)");
         healthAmount -= damage;
@@ -60,7 +61,7 @@ public class PlayerHealth : MonoBehaviour
 
         if ((collision.gameObject.CompareTag("Spikes")) || (collision.gameObject.CompareTag("SpikeMan")) || (collision.gameObject.CompareTag("Bottom")) || collision.gameObject.CompareTag("Enemy"))
         {
-            takeDamage(10f);
+            TakeDamage(10f);
         }
     }
     private void Die()
