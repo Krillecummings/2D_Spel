@@ -9,9 +9,12 @@ public class PlayerHealth : MonoBehaviour
     private float healthAmount = 100f;
     public Slider healthSlider;
     private Animator anim;
+    private Rigidbody2D rb;
     void Start()
     {
         healthSlider.maxValue = healthAmount;
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         healthSlider.value = healthAmount;
     }
 
@@ -23,31 +26,52 @@ public class PlayerHealth : MonoBehaviour
 
     public void takeDamage(float damage)
     {
+        Debug.Log("tar skada :)");
         healthAmount -= damage;
-        healthSlider.value = healthAmount;
+        StartCoroutine(UpdateHealthBar());
 
-        
         if (healthAmount <= 0)
         {
             Die();
         }
     }
 
+    IEnumerator UpdateHealthBar()
+    {
+        float elapsedTime = 0f;
+        float duration = 0.5f;  // Adjust the duration as needed
+
+        while (elapsedTime < duration)
+        {
+            healthSlider.value = Mathf.Lerp(healthSlider.value, healthAmount, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        healthSlider.value = healthAmount;
+    }
+
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Kolliderar med något");  
 
-        if ((collision.gameObject.CompareTag("Spikes")) || (collision.gameObject.CompareTag("SpikeMan")) || (collision.gameObject.CompareTag("Bottom")) || collision.gameObject.CompareTag("Enemy"));
-
-        takeDamage(10f);
-
-
+        if ((collision.gameObject.CompareTag("Spikes")) || (collision.gameObject.CompareTag("SpikeMan")) || (collision.gameObject.CompareTag("Bottom")) || collision.gameObject.CompareTag("Enemy"))
+        {
+            takeDamage(10f);
+        }
     }
     private void Die()
     {
         anim.SetTrigger("death");
+        rb.bodyType = RigidbodyType2D.Static;
     }
 }
+
+
+
+
 
 
