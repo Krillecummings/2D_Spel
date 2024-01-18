@@ -67909,27 +67909,6 @@ Transform:
   - {fileID: 300822557}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &860870367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8101675268448328251, guid: d36c9139ebf61164b9286322408777a1, type: 3}
-  m_PrefabInstance: {fileID: 9005392930317414163}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &860870374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860870367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea79a4ff15c1c4b4794aea2af8d29466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 761499253}
-  - {fileID: 296214733}
-  speed: 5
 --- !u!4 &862376457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7672709960530981048, guid: d765097b4e237e14cbe455a7e75a0dc2, type: 3}
@@ -68764,7 +68743,7 @@ GameObject:
   - component: {fileID: 1269485382}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70092,12 +70071,24 @@ PrefabInstance:
       objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 6024134585969551058, guid: d36c9139ebf61164b9286322408777a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792190915402134632, guid: d36c9139ebf61164b9286322408777a1, type: 3}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6792190915402134632, guid: d36c9139ebf61164b9286322408777a1, type: 3}
       propertyPath: waypoints.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6792190915402134632, guid: d36c9139ebf61164b9286322408777a1, type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 761499253}
+    - target: {fileID: 6792190915402134632, guid: d36c9139ebf61164b9286322408777a1, type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 296214733}
     - target: {fileID: 7685443690216994666, guid: d36c9139ebf61164b9286322408777a1, type: 3}
       propertyPath: m_Name
       value: Enemyroute
@@ -70105,10 +70096,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8101675268448328251, guid: d36c9139ebf61164b9286322408777a1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 860870374}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d36c9139ebf61164b9286322408777a1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

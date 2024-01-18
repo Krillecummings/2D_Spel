@@ -13,10 +13,16 @@ public class Enemymovement : MonoBehaviour
 
     [SerializeField] private GameObject[] waypoints;
     private Transform waypointTransform;
+    [SerializeField] private float speed = 2f;
+
+
+
     private int currentWaypointIndex = 0;
-    private int MaxHP = 10;
-    private int HP = 10;
+    private float MaxHP = 10;
+    private float HP = 10;
     private int Edamage = 10;
+
+
     private int enemycount = 5;
     private int points = 0;
     [SerializeField] private TextMeshProUGUI Enemycount;
@@ -48,18 +54,45 @@ public class Enemymovement : MonoBehaviour
             {
                 currentWaypointIndex = 0;
                 sprite.flipX = true;
+                
 
             }
+
         }
-        if (HP<0)
+
+        void Damage(float damage)
         {
-            Destroy(sprite.gameObject);
-            points += 1;
+            Debug.Log("tar skada :)");
+            HP -= damage;
+            if (HP <= 0)
+            {
+                Destroy(sprite.gameObject);
+                points += 1;
 
-            Enemycount.text = "Enemies Remaining: " + points;
+                Enemycount.text = "Enemies Remaining: " + points;
 
-            enemycount++;
+                enemycount++;
+            }
+
+
+
         }
+
+        transform.position = Vector2.MoveTowards(transform.position, waypointTransform.position, Time.deltaTime * speed);
+
+
+      /*   void OnCollisionEnter2D(Collision2D collision) {
+
+            if ((collision.gameObject.CompareTag("Player"))
+            {
+                Debug.Log(collision.gameObject.name);
+                Damage(float damage);
+
+            }
+
+        }*/
+
+
 
 
     }
