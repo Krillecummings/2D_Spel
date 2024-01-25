@@ -18,6 +18,7 @@ public class Death : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+      
     }
 
 
@@ -32,6 +33,7 @@ public class Death : MonoBehaviour
         }
 
     }
+    
     private void Die()
     {
         if (healthAmount<0)
@@ -41,7 +43,8 @@ public class Death : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
         }
         
-        
+
+
     }
 
     private void RestartLive()
