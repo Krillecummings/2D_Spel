@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Playermovement : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class Playermovement : MonoBehaviour
 
     private SpriteRenderer sprite;
 
+  
     private enum MovementState {idle,running,jumping,falling,double_jumping,wall_jummping}
 
     private MovementState state = MovementState.idle;
@@ -25,7 +28,12 @@ public class Playermovement : MonoBehaviour
     [SerializeField] private int ExtraJumps = 1;
     [SerializeField] private int MaxJumps = 1;
     [SerializeField] private LayerMask jumpableGround;
+    [SerializeField] private LayerMask groundLayer;
 
+    private void Awake()
+    {
+        boxCol = GetComponent<BoxCollider2D>();
+    }
 
     private void Jump()
     {
@@ -119,6 +127,12 @@ public class Playermovement : MonoBehaviour
 
     private bool isGrounded()
     {
-        return Physics2D.BoxCast(boxCol.bounds.center, boxCol.bounds.size, 0f, Vector2.down, 1f, jumpableGround);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCol.bounds.center, boxCol.bounds.size, 0, Vector2.down, 0.1f, groundLayer, jumpableGround);
+        return raycastHit.collider != null;
+    }
+    private bool onWall()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCol.bounds.center, boxCol.bounds.size, 0,new Vector2.(transform.local), 0.1f, groundLayer, jumpableGround);
+        return raycastHit.collider != null;
     }
 }
