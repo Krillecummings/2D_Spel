@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator UpdateHealthBar()
     {
         float elapsedTime = 0f;
-        float duration = 0.5f;  // Adjust the duration as needed
+        float duration = 0.5f;  
 
         while (elapsedTime < duration)
         {
