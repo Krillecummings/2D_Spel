@@ -7,11 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HeroKnight_Jump
-<<<<<<< HEAD
-  serializedVersion: 6
-=======
   serializedVersion: 7
->>>>>>> 122eb95e46c477bc3d82f79aca1c28fb77b99aa4
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -22,12 +18,8 @@ AnimationClip:
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
-<<<<<<< HEAD
-  - curve:
-=======
   - serializedVersion: 2
     curve:
->>>>>>> 122eb95e46c477bc3d82f79aca1c28fb77b99aa4
     - time: 0
       value: {fileID: 21300076, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
     - time: 0.09090909
@@ -38,10 +30,7 @@ AnimationClip:
     path: 
     classID: 212
     script: {fileID: 0}
-<<<<<<< HEAD
-=======
     flags: 2
->>>>>>> 122eb95e46c477bc3d82f79aca1c28fb77b99aa4
   m_SampleRate: 11
   m_WrapMode: 0
   m_Bounds:
@@ -56,11 +45,8 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
-<<<<<<< HEAD
-=======
       isIntCurve: 0
       isSerializeReferenceCurve: 0
->>>>>>> 122eb95e46c477bc3d82f79aca1c28fb77b99aa4
     pptrCurveMapping:
     - {fileID: 21300076, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
     - {fileID: 21300078, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
