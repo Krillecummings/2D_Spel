@@ -67932,7 +67932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059061944}
   - component: {fileID: 1059061943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68487,6 +68487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpForce: 10
   moveSpeed: 15
+  jumpPower: 0
   ExtraJumps: 1
   MaxJumps: 1
   jumpableGround:
@@ -68495,6 +68496,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+<<<<<<< HEAD
+=======
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+>>>>>>> 346da0d6d6716af1dc46e02daace98b3df814c3b
   jumpSoundEffect: {fileID: 1269485381}
 --- !u!114 &1269485378
 MonoBehaviour:
@@ -68765,7 +68772,7 @@ GameObject:
   - component: {fileID: 1334763251}
   - component: {fileID: 1334763253}
   - component: {fileID: 1334763252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
