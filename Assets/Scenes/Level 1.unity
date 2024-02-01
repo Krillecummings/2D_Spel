@@ -68496,12 +68496,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
-<<<<<<< HEAD
-=======
   wallLayer:
     serializedVersion: 2
     m_Bits: 0
->>>>>>> 346da0d6d6716af1dc46e02daace98b3df814c3b
   jumpSoundEffect: {fileID: 1269485381}
 --- !u!114 &1269485378
 MonoBehaviour:
