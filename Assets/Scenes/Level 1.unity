@@ -67932,7 +67932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059061944}
   - component: {fileID: 1059061943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68364,18 +68364,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07799673, y: 1.328034}
+  m_Offset: {x: -0.07799673, y: -0.32587373}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 6.25, y: 3.4375}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 6.25, y: 3.4375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6004629, y: 2.3862545}
+  m_Size: {x: 1.6004629, y: 2.609739}
   m_EdgeRadius: 0
 --- !u!50 &1269485373
 Rigidbody2D:
@@ -68445,12 +68445,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
+  m_Sprite: {fileID: 168014517, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.25, y: 3.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -68465,7 +68465,7 @@ Transform:
   m_GameObject: {fileID: 1269485371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 1.2, z: 0}
+  m_LocalPosition: {x: -12, y: 2.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68487,11 +68487,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpForce: 10
   moveSpeed: 15
+  jumpPower: 0
   ExtraJumps: 1
   MaxJumps: 1
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+<<<<<<< HEAD
+=======
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+>>>>>>> 346da0d6d6716af1dc46e02daace98b3df814c3b
   jumpSoundEffect: {fileID: 1269485381}
 --- !u!114 &1269485378
 MonoBehaviour:
@@ -68762,7 +68772,7 @@ GameObject:
   - component: {fileID: 1334763251}
   - component: {fileID: 1334763253}
   - component: {fileID: 1334763252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
