@@ -68364,7 +68364,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07799673, y: -0.32587373}
+  m_Offset: {x: -0.09614563, y: -0.4704969}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -68375,7 +68375,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6004629, y: 2.609739}
+  m_Size: {x: 3.8388577, y: 2.898985}
   m_EdgeRadius: 0
 --- !u!50 &1269485373
 Rigidbody2D:
@@ -68465,7 +68465,7 @@ Transform:
   m_GameObject: {fileID: 1269485371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 2.68, z: 0}
+  m_LocalPosition: {x: -12, y: 2.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68485,21 +68485,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c6bd70dad857f43bcb1aa5ae0191d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 10
-  moveSpeed: 15
-  jumpPower: 0
-  ExtraJumps: 1
-  MaxJumps: 1
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  moveSpeed: 15
+  jumpForce: 14
+  extraJumps: 1
+  maxJumps: 1
   jumpSoundEffect: {fileID: 1269485381}
+  doubleJumpSoundEffect: {fileID: 0}
+  deathSoundEffect: {fileID: 0}
 --- !u!114 &1269485378
 MonoBehaviour:
   m_ObjectHideFlags: 0
