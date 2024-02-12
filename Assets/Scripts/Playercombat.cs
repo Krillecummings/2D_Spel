@@ -21,14 +21,15 @@ public class Playercombat : MonoBehaviour
     public LayerMask enemyLayers;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             Attack();
+           
         }
     }
     void Attack()
     {
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("attack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

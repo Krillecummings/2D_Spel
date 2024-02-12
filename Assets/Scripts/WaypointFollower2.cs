@@ -21,7 +21,7 @@ public class WaypointFollower2 : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(currentWaypointIndex);
+        //Debug.Log(currentWaypointIndex);
         waypointTransform = waypoints[currentWaypointIndex].transform;
 
 
@@ -29,7 +29,7 @@ public class WaypointFollower2 : MonoBehaviour
         {
             anim.SetBool("Hit", true);
 
-            Debug.Log(currentWaypointIndex);
+            //Debug.Log(currentWaypointIndex);
             currentWaypointIndex++;
 
             if (currentWaypointIndex >= waypoints.Length)

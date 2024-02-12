@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int extraJumps = 1;
     [SerializeField] private int maxJumps = 1;
 
-    private enum MovementState { idle, running, jumping, falling, double_jumping, wall_jumping }
+    private enum MovementState { idle, running, jumping, falling, double_jumping, wall_jumping, attack }
     private MovementState state = MovementState.idle;
 
     [Header("Audio")]
@@ -120,8 +120,10 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.falling;
         }
+        
+        Debug.Log(state);
 
-        anim.SetInteger("state", (int)state);
+        anim.SetInteger("State", (int)state);
     }
 
     private bool IsGrounded()

@@ -13,14 +13,14 @@ public class WaypointFollower : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(currentWaypointIndex);
+        //Debug.Log(currentWaypointIndex);
         waypointTransform = waypoints[currentWaypointIndex].transform;
 
 
         if (Vector2.Distance(waypointTransform.position, transform.position) < .1f)
         {
 
-            Debug.Log(currentWaypointIndex);
+            //Debug.Log(currentWaypointIndex);
             currentWaypointIndex++;
 
             if (currentWaypointIndex >= waypoints.Length)
