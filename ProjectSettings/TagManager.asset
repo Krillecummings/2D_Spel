@@ -9,6 +9,8 @@ TagManager:
   - SpikeMan
   - Bottom
   - Enemy
+  - Ground
+  - Block
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 
