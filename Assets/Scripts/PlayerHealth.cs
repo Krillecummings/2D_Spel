@@ -19,15 +19,11 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+   
 
-    }
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("tar skada :)");
         healthAmount -= damage;
         StartCoroutine(UpdateHealthBar());
 
@@ -57,16 +53,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Kolliderar med något");  
 
-        if ((collision.gameObject.CompareTag("Spikes")) || (collision.gameObject.CompareTag("SpikeMan")) || (collision.gameObject.CompareTag("Bottom")) || collision.gameObject.CompareTag("Enemy"))
+        if ((collision.gameObject.CompareTag("Spikes")) || (collision.gameObject.CompareTag("SpikeMan")) || (collision.gameObject.CompareTag("Bottom")) || collision.gameObject.CompareTag("Enemy")) 
         {
             TakeDamage(10f);
         }
     }
     private void Die()
     {
-        anim.SetTrigger("death");
+        anim.SetTrigger("Death");
         rb.bodyType = RigidbodyType2D.Static;
     }
 }

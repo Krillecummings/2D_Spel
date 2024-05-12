@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Enemymovement : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Enemymovement : MonoBehaviour
 
     [SerializeField] private GameObject[] waypoints;
     private Transform waypointTransform;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 5f;
 
 
 
@@ -43,10 +44,15 @@ public class Enemymovement : MonoBehaviour
     void Update()
     {
         waypointTransform = waypoints[currentWaypointIndex].transform;
+        if(gameObject.name == "Little Knight")
+        {
+            Debug.Log(waypointTransform.position);
+            Debug.Log(transform.position);
+
+        }
         if (Vector2.Distance(waypointTransform.position, transform.position) < .1f)
         {
 
-            Debug.Log(currentWaypointIndex);
             currentWaypointIndex++;
             sprite.flipX = false;
 
@@ -60,40 +66,15 @@ public class Enemymovement : MonoBehaviour
 
         }
 
-        void Damage(float damage)
+
+        if (gameObject.name == "Little Knight")
         {
-            Debug.Log("tar skada :)");
-            HP -= damage;
-            if (HP <= 0)
-            {
-                Destroy(sprite.gameObject);
-                points += 1;
 
-                Enemycount.text = "Enemies Remaining: " + points;
-
-                enemycount++;
-            }
-
-
-
+            Debug.Log(transform.position);
+            transform.position = Vector2.MoveTowards(transform.position, waypointTransform.position, Time.deltaTime * speed);
         }
-
         transform.position = Vector2.MoveTowards(transform.position, waypointTransform.position, Time.deltaTime * speed);
-
-
-      /*   void OnCollisionEnter2D(Collision2D collision) {
-
-            if ((collision.gameObject.CompareTag("Player"))
-            {
-                Debug.Log(collision.gameObject.name);
-                Damage(float damage);
-
-            }
-
-        }*/
-
-
-
+   
 
     }
 }

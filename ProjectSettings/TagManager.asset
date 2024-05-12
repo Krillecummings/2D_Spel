@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Ground
   - Block
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - UI
   - Ground
   - Enemy
-  - 
+  - Wall
   - 
   - 
   - 

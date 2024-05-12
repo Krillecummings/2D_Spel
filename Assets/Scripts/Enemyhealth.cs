@@ -13,7 +13,7 @@ public class Enemyhealth : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        currentHealth = maxHealth; // Initialize currentHealth with maxHealth
+        currentHealth = maxHealth; 
     }
     
     public void Takedamage(int damage)
@@ -32,14 +32,14 @@ public class Enemyhealth : MonoBehaviour
     {
         animator.SetBool("Isdead", true);
 
-        // Disable the collider and script
+        
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }
 
     void Update()
     {
-        // You can add update logic here if needed
+       
     }
 
     public void RemoveEnemy()

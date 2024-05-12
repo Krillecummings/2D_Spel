@@ -24,35 +24,35 @@ public class Death : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Hej");
         if ((collision.gameObject.CompareTag("Spikes")) || (collision.gameObject.CompareTag("SpikeMan")) || (collision.gameObject.CompareTag("Bottom")) || collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log(collision.gameObject.name);
+           
             Die();
 
         }
 
     }
     
+    
+    
     private void Die()
     {
         if (healthAmount<0)
         {
             deathSoundEffect.Play();
-            anim.SetTrigger("death");
+            anim.SetTrigger("Death");
             rb.bodyType = RigidbodyType2D.Static;
         }
-        
-
+       
 
     }
-
+    //Function that leads to death
     private void RestartLive()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
-     
+//Resets the level when you die    
 
     
 

@@ -16,7 +16,7 @@ public class Playercombat : MonoBehaviour
 
     public float attackRange = 0.5f;
 
-    public int attackDamage = 100;
+    public int attackDamage = 50;
 
     public float attackRate = 2f;
 
@@ -25,31 +25,57 @@ public class Playercombat : MonoBehaviour
     public LayerMask enemyLayers;
     void Update()
     {
-        if(Time.time >=  nextAttackTime)
+        if (Time.time >= nextAttackTime)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
                 Attack();
-                nextAttackTime = Time.time + 1f/ attackRate;
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+            else if (Input.GetKeyDown(KeyCode.T))
+            {
+                Attack2();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+            else if (Input.GetKeyDown(KeyCode.G))
+            {
+                Attack3();
+                nextAttackTime = Time.time + 1f / attackRate;
             }
         }
+
     }
-      
+    //Attack buttons
+    private void Attack2()
+    {
+        animator.SetTrigger("Attack2");
+    }
+
+    private void Attack3()
+    {
+        animator.SetTrigger("Attack3");
+    }
     void Attack()
     {
-        animator.SetTrigger("attack");
+        animator.SetTrigger("Attack1");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
 
 
-        foreach (Collider2D enemy in hitEnemies)
+        if (hitEnemies.Length > 0)
         {
-            enemy.GetComponent<Enemyhealth>().Takedamage(attackDamage);
+            foreach (Collider2D Enemy in hitEnemies)
+            {
+                if (Enemy.gameObject.CompareTag("Enemy"))
+                {
+                    Enemy.GetComponent<Enemyhealth>().Takedamage(attackDamage);
+                }
 
-            Debug.Log("Träff");
+            }
         }
     }
+    //Enemies taking damage
     private void OnDrawGizmosSelected()
     {
         if(attackPoint == null) 
@@ -57,4 +83,9 @@ public class Playercombat : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    private void Hurt()
+    {
+        animator.SetTrigger("Hurt");
+    }
+
 }

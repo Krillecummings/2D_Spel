@@ -1,32 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class Finishedlevel : MonoBehaviour
 
 {
     public Animator anim;
     private AudioSource finishSound;
-    private int enemycount = 5;
-    private bool levelCompleted;
-    
+    private bool levelCompleted = false;
+    [SerializeField] GameObject player;
+    itemcollector itemcollector;
+    public int enemyCount = 1;
+
+    [SerializeField] private TextMeshProUGUI Enemytext;
+
+    private float dirX;
+    public Animator animator;
+    private SpriteRenderer sprite;
+    public int points = 6;
+
+    [SerializeField] private TextMeshProUGUI Kiwitext;
+
+
+
+
+
     void Start()
     {
         finishSound = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+        itemcollector = player.GetComponent<itemcollector>();
+
     }
-
-
-
     void Update()
     {
-        if (enemycount > 5 && levelCompleted != true)
+
+       
+        if ( points == 0 && levelCompleted != true)
         {
             anim.SetTrigger("finished");
             finishSound.Play();
             levelCompleted = true;
-            Invoke("CompleteLevel", 6f);
+            Invoke("CompleteLevel", 1f);
+            
 
         }
     }
@@ -34,4 +50,27 @@ public class Finishedlevel : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+
+        if (collision.CompareTag("Kiwi"))
+        {
+            points -= 1;
+            Destroy(collision.gameObject);
+            Kiwitext.text = "Fruits remaining: " + points;
+        }
+
+        if (collision.CompareTag("Player"))
+        {
+           CompleteLevel();
+        }
+
+
+    }
+    
+     
+
+
+
 }
