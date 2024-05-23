@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
-
+    //Function for the player taking damage
     IEnumerator UpdateHealthBar()
     {
         float elapsedTime = 0f;
@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
 
         healthSlider.value = healthAmount;
     }
-
+    //Updates the healthbar
 
 
 
@@ -59,13 +59,14 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(10f);
         }
     }
+    //Takes damage when colliding with the tags named above
     private void Die()
     {
         anim.SetTrigger("Death");
         rb.bodyType = RigidbodyType2D.Static;
     }
 }
-
+//Animates the death
 
 
 

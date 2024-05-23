@@ -20,7 +20,7 @@ public class itemcollector : MonoBehaviour
         {
             points -= 1;
             Destroy(collision.gameObject);
-            Kiwitext.text = "Fruits remaining: " + points;
+       
         }
 
 

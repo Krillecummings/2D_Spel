@@ -32,7 +32,7 @@ public class Death : MonoBehaviour
         }
 
     }
-    
+    //Player is able to die when colliding with tags above
     
     
     private void Die()

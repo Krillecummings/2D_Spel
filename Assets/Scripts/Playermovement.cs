@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         anim.SetFloat("AirSpeedY", rb.velocity.y);
         dirX = Input.GetAxisRaw("Horizontal");
         Move();
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("Grounded", false);
         }
+     
 
 
         if (Input.GetButtonDown("Jump") && isGrounded())
@@ -88,6 +90,10 @@ public class PlayerMovement : MonoBehaviour
             Roll();
         }
 
+        if(Wall())
+        {
+            anim.SetTrigger("WallSlide");
+        }
     }
 
     private void Move()
@@ -110,6 +116,8 @@ public class PlayerMovement : MonoBehaviour
         jumpSoundEffect.Play();
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
+
+    
 
     private void DoubleJump()
     {
@@ -189,7 +197,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(wallJumpHorizontalForce, jumpForce);
         }
+       
+
+        }
     }
-}
+
 
     

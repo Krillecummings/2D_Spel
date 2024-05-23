@@ -63,6 +63,7 @@ public class Finishedlevel : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("You Won!");
            CompleteLevel();
         }
 

@@ -69,6 +69,7 @@ public class Playercombat : MonoBehaviour
             {
                 if (Enemy.gameObject.CompareTag("Enemy"))
                 {
+                    Debug.Log("skadar");
                     Enemy.GetComponent<Enemyhealth>().Takedamage(attackDamage);
                 }
 
